@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Studentity;
 impory com.example.demo.service.Studservice;
+
 @RestController
 @RequestMapping("/student")
 public class Studctl{
@@ -32,6 +33,13 @@ public class Studctl{
     public Optional<Studentity> getStudent(@PathVariable Long id){
         return ser.getOneStudent(id);
     }
-    DeleteMapping("/del/{id}")
-    pu
+    @DeleteMapping("/del/{id}")
+    public String deleteStudents(@PathVariable Long id){
+        Optional<Studentity>student = ser.getOneStudent(id);
+        if(student.isPresent()){
+            ser.deleteStudent(id);
+            return "delete successfully";
+        }
+        return "ID NOT FOUND";
+    }
 }
