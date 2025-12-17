@@ -15,6 +15,6 @@ public class SwaggerConfig {
 public OpenAPI customOpenAPI() {
     return new OpenAPI()
             .info(new Info().title("Student API").version("1.0"))
-            .servers(List.of(new Server().url("http://localhost:9001")));
+            .servers(List.of(new Server().url("https://8246.pro604cr.amypo.ai/proxy/9001/")));
 }
 }
