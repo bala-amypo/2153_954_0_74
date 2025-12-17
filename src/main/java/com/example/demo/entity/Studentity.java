@@ -1,9 +1,13 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "student")
+@Table(name = "students") // optional
 public class Studentity {
 
     @Id
@@ -13,30 +17,21 @@ public class Studentity {
     private String name;
     private String email;
 
-    public Studentity() {
-    }
+    public Studentity() {}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+    public Studentity(Long id, String name, String email) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
     }
+
+    // getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 }
