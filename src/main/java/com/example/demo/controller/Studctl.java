@@ -36,7 +36,13 @@ public class Studctl{
 
     @PutMapping("/update/{id}"){
         public String updateStudent(@pathVariable Long id,@RequestBody Studentity newStudentity){
-            optinal<Studentity> s
+            optinal<Studentity> student = ser.getOneStudent(id);
+            if(student.isPresent()){
+                newStudentity.setId(id);
+                ser.insertStudentity(newStudentity);
+                return"Updated Successfully";
+            }
+            return "ID NOT FOUND";
         }
     }
     @DeleteMapping("/del/{id}")
