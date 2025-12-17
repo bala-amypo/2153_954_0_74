@@ -2,19 +2,15 @@ package com.example.demo.service;
 
 import java.util.List;
 import java.util.Optional;
-import com.example.demo.entity.Studentity;
+import com.example.demo.entity.Student;
 
-public interface Studservice {
+public interface StudentService {
 
-    // Add or update a student
-    Studentity insertStudentity(Studentity st);
+    Student insertStudent(Student st);
 
-    // Get all students
-    List<Studentity> getAllStudentity();
+    List<Student> getAllStudents();
 
-    // Get student by id
-    Optional<Studentity> getOneStudent(Long id);
+    Optional<Student> getOneStudent(Long id);
 
-    // Delete student by id
     void deleteStudent(Long id);
 }
