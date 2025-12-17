@@ -14,5 +14,24 @@ public class Studctl{
     private final Studservice ser;
 
     @Autowired
-    public Studctl(Studservice )
+    public Studctl(Studservice ser){
+        this.ser=ser;
+    }
+
+    @postMapping("/add")
+    public Studentity addStudent(@RequestBody Studentity st){
+        return ser.insertStudentity(st);
+    }
+
+    @GetMapping("/getAll")
+    public List<Studentity>getAllStudents(){
+        return ser.getAllStudentity();
+    }
+
+    @GetMapping("/get/{id}")
+    public Optional<Studentity> getStudent(@PathVariable Long id){
+        return ser.getOneStudent(id);
+    }
+    DeleteMapping("/del/{id}")
+    pu
 }
