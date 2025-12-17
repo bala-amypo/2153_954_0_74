@@ -33,6 +33,12 @@ public class Studctl{
     public Optional<Studentity> getStudent(@PathVariable Long id){
         return ser.getOneStudent(id);
     }
+
+    @PutMapping("/update/{id}"){
+        public String updateStudent(@pathVariable Long id,@RequestBody Studentity newStudentity){
+            optinal<Studentity> s
+        }
+    }
     @DeleteMapping("/del/{id}")
     public String deleteStudents(@PathVariable Long id){
         Optional<Studentity>student = ser.getOneStudent(id);
