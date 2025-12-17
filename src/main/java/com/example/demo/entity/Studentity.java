@@ -20,6 +20,14 @@ public class Studentity{
         return email;
     }
     public void setEmail(String email){
-        this.e
+        this.email = email;
+    }
+    public Studentity(int id,String name,String email){
+        this.id = (long) id;
+        this.name = name;
+        this.email = email;
+    }
+    public Studentity(){
+        
     }
 }
