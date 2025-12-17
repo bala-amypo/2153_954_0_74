@@ -11,17 +11,10 @@ import java.util.List;
 @Configuration
 public class SwaggerConfig {
 
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                // API info for Swagger UI
-                .info(new Info()
-                        .title("Student API")
-                        .version("1.0")
-                        .description("API documentation for Student Management"))
-                // Server URL (must match your app port)
-                .servers(List.of(
-                        new Server().url("http://localhost:8080")
-                ));
-    }
+   @Bean
+public OpenAPI customOpenAPI() {
+    return new OpenAPI()
+            .info(new Info().title("Student API").version("1.0"))
+            .servers(List.of(new Server().url("http://localhost:9001")));
+}
 }
