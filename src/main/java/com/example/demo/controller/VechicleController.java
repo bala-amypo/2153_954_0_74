@@ -14,7 +14,7 @@ public class VehicleController {
     private VehicleService vehicleService;
 
     @PostMapping("/add")
-    public Vehicleentity addVehicle(@RequestBody Vehicleentity vehicle) {
+    public Vehicleentity add(@RequestBody Vehicleentity vehicle) {
         return vehicleService.addVehicle(vehicle);
     }
 }

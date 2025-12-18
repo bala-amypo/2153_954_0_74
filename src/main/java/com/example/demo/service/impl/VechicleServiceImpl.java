@@ -15,11 +15,6 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public Vehicleentity addVehicle(Vehicleentity vehicle) {
-
-        if (vehicle.getCapacityKg() <= 0) {
-            throw new IllegalArgumentException("Capacity must be greater than zero");
-        }
-
         return vehicleRepo.save(vehicle);
     }
 }

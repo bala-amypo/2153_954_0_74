@@ -3,39 +3,19 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "vehicle", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "vehicleNumber")
-})
+@Table(name = "vehicle")
 public class Vehicleentity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Userentity user;
-
     private String vehicleNumber;
-
     private Double capacityKg;
-
     private Double fuelEfficiency;
 
     public Long getId() {
         return id;
-    }
-
-    public Userentity getUser() {
-        return user;
-    }
-
-    public void setUser(Userentity user) {
-        this.user = user;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getVehicleNumber() {
