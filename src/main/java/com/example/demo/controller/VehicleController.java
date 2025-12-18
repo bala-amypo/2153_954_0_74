@@ -1,20 +1,30 @@
 package com.example.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.entity.Vehicleentity;
+import com.example.demo.entity.VehicleEntity;
 import com.example.demo.service.VehicleService;
 
 @RestController
-@RequestMapping("/vehicle")
+@RequestMapping("/vehicles")
 public class VehicleController {
 
-    @Autowired
-    private VehicleService vehicleService;
+    private final VehicleService vehicleService;
 
-    @PostMapping("/add")
-    public Vehicleentity addVehicle(@RequestBody Vehicleentity vehicle) {
-        return vehicleService.addVehicle(vehicle);
+    public VehicleController(VehicleService vehicleService) {
+        this.vehicleService = vehicleService;
+    }
+
+    @PostMapping("/{userId}")
+    public VehicleEntity addVehicle(@PathVariable Long userId,
+                                    @RequestBody VehicleEntity vehicle) {
+        return vehicleService.addVehicle(userId, vehicle);
+    }
+
+    @GetMapping("/user/{userId}")
+    public List<VehicleEntity> getVehiclesByUser(@PathVariable Long userId) {
+        return vehicleService.getVehiclesByUser(userId);
     }
 }
