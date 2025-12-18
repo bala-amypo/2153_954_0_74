@@ -1,7 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Userentity;
+import com.example.demo.entity.UserEntity;
 
 public interface UserService {
-    Userentity registerUser(Userentity user);
+
+    UserEntity registerUser(UserEntity user);
+
+    UserEntity getUserById(Long id);
 }
